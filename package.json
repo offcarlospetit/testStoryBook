@@ -1,0 +1,101 @@
+{
+    "name": "storyexample",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "android": "react-native run-android",
+        "build": "del lib && bob build",
+        "build-storybook": "build-storybook",
+        "coverage": "jest --coverage --silent",
+        "dist": "del dist && rsync -a --exclude={'node_modules','**/__tests__','**/*.test.tsx','*.xml','android','ios','**/*.stories.tsx','src/storybook.index.tsx'} ./README.md ./src ./lib ./package.json dist/",
+        "format": "prettier . --write",
+        "clean": "del lib",
+        "ios": "react-native run-ios",
+        "lint": "echo 'This script will invoke ESLint warnings and Errors Report eventually.'",
+        "prestorybook": "rnstl",
+        "postinstall": "[[ -d ios ]] && npx pod-install && [[ -d .git ]] && husky install || true",
+        "prerelease": "bob build",
+        "release": "npm publish --access restricted",
+        "start": "react-native start",
+        "storybook": "start-storybook -p 7007",
+        "test": "echo 'This script will invoke Jest Test Runner eventually.'"
+    },
+    "dependencies": {
+        "@react-navigation/bottom-tabs": "^6.2.0",
+        "@react-navigation/native": "^6.0.8",
+        "@testing-library/react-native": "^9.0.0",
+        "@types/styled-components-react-native": "^5.1.3",
+        "babel-plugin-module-resolver": "^4.1.0",
+        "highlight-words-core": "^1.2.2",
+        "lottie-react-native": "^5.0.1",
+        "react": "17.0.2",
+        "react-content-loader": "^6.1.0",
+        "react-native": "0.67.2",
+        "react-native-app-intro-slider": "^4.0.4",
+        "react-native-elements": "^3.4.2",
+        "react-native-gesture-handler": "^2.2.0",
+        "react-native-reanimated": "^2.3.1",
+        "react-native-safe-area-context": "^3.3.2",
+        "react-native-screens": "^3.10.2",
+        "react-native-skeleton-placeholder": "^5.0.0",
+        "react-native-storybook-loader": "^2.0.5",
+        "react-native-svg": "^12.1.1",
+        "react-native-vector-icons": "^9.0.0",
+        "styled-components": "^5.3.3"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.12.9",
+        "@babel/runtime": "^7.12.5",
+        "@react-native-community/eslint-config": "^2.0.0",
+        "@storybook/addon-actions": "^5.3",
+        "@storybook/addon-knobs": "^5.3",
+        "@storybook/addon-links": "^5.3",
+        "@storybook/addon-ondevice-actions": "^5.3",
+        "@storybook/addon-ondevice-knobs": "^5.3",
+        "@storybook/react-native": "^5.3",
+        "@storybook/react-native-server": "^5.3",
+        "@types/jest": "^26.0.23",
+        "@types/react-native": "^0.66.15",
+        "@types/react-native-vector-icons": "^6.4.10",
+        "@types/react-test-renderer": "^17.0.1",
+        "@typescript-eslint/eslint-plugin": "^5.7.0",
+        "@typescript-eslint/parser": "^5.7.0",
+        "babel-jest": "^26.6.3",
+        "babel-loader": "^8.2.3",
+        "eslint": "^7.14.0",
+        "jest": "^26.6.3",
+        "metro-react-native-babel-preset": "^0.66.2",
+        "react-dom": "17.0.2",
+        "react-test-renderer": "17.0.2",
+        "typescript": "^4.4.4"
+    },
+    "resolutions": {
+        "@types/react": "^17"
+    },
+    "jest": {
+        "preset": "react-native",
+        "transformIgnorePatterns": [
+            "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base)"
+        ],
+        "setupFilesAfterEnv": [
+            "<rootDir>/__mocks__/globalMock.js"
+        ],
+        "moduleFileExtensions": [
+            "ts",
+            "tsx",
+            "js",
+            "jsx",
+            "json",
+            "node"
+        ],
+        "config": {
+            "react-native-storybook-loader": {
+                "searchDir": [
+                    "src/components"
+                ],
+                "pattern": "**/*.stories.tsx",
+                "outputFile": "storybook/storyLoader.js"
+            }
+        }
+    }
+}
