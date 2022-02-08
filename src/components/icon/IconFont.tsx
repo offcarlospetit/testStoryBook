@@ -4,8 +4,8 @@ import icoMoonConfig from './selection.json';
 
 const IconFonts = createIconSetFromIcoMoon(
   icoMoonConfig,
-  'Icons',
-  'Icons.ttf',
+  'Icomoon',
+  'Icomoon.ttf',
 );
 
 export type IconFontName =

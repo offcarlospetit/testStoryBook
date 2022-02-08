@@ -134,7 +134,7 @@ const Receipt: React.FC<ReceiptProps> = props => {
     // iconName,
     date,
     operationNumber,
-    shareButtonProps 
+    shareButtonProps
   } = props;
 
   const { isVisibleShareButton, shareButtonTitle = '', shareButtonMetricEventName, shareButtonOnPress } = shareButtonProps
@@ -160,7 +160,7 @@ const Receipt: React.FC<ReceiptProps> = props => {
     );
   };
   return (
-    <View>
+    <View style={{ flex: 1 }}>
       {renderIcon()}
       <TextTitle weight="700">{title}</TextTitle>
       {subtitle && <TextSubTitle weight="400">{subtitle}</TextSubTitle>}
@@ -186,7 +186,7 @@ const Receipt: React.FC<ReceiptProps> = props => {
                   onPress={shareButtonOnPress}
                 />
               )}
-              
+
             </TableHeaderContainer>
           ) : (
             <>

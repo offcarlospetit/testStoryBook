@@ -1,7 +1,7 @@
 import React from 'react';
 
-import {text, withKnobs} from '@storybook/addon-knobs';
-import {storiesOf} from '@storybook/react-native';
+import { text, withKnobs } from '@storybook/addon-knobs';
+import { storiesOf } from '@storybook/react-native';
 import Receipt from './Receipt';
 import Container from '../container/Container';
 import Button from '../button/Button';

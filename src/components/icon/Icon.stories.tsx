@@ -173,20 +173,20 @@ storiesOf('Atoms/Icon', module)
       name={select(labelCard, cards, defaultValueCard, groupIdCard) as IconName}
     />
   ))
-  // .add('Icon Fonts', () => (
-  //   <IconFont
-  //     name={
-  //       select(
-  //         labelIconFont,
-  //         IconFonts,
-  //         defaultValueIconFont,
-  //         groupIdIconFont,
-  //       ) as IconFontName
-  //     }
-  //     size={60}
-  //     color={Colors.NeutralLightGrey70}
-  //   />
-  // ))
+  .add('Icon Fonts', () => (
+    <IconFont
+      name={
+        select(
+          labelIconFont,
+          IconFonts,
+          defaultValueIconFont,
+          groupIdIconFont,
+        ) as IconFontName
+      }
+      size={60}
+      color={Colors.NeutralLightGrey70}
+    />
+  ))
   .add('Icons', () => (
     <Icon
       name={select(labelIcon, Icons, defaultValueIcon, groupIdIcon) as IconName}
